@@ -28,7 +28,6 @@ module.exports = {
 {% endtab %}
 
 {% tab title="package.json" %}
-{% code title="package.json" %}
 ```json
 {
   "name": "my-app",
@@ -45,7 +44,6 @@ module.exports = {
   }
 }
 ```
-{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -71,7 +69,7 @@ module.exports = {
 {% endtab %}
 
 {% tab title="package.json" %}
-```jsonc
+```json
 // Only the relevant section of package.json is shown, for brevity.
 {
   "config": {
