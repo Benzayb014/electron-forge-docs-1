@@ -14,7 +14,6 @@ If you want to use the core API programmatically, see the [#programmatic-usage](
 Forge's CLI uses comma-separated value strings to pass multiple arguments into a single flag. Depending on your terminal, these comma-separated values may need to be enclosed in quotation marks.
 {% endhint %}
 
-
 ## Installation
 
 To use the Forge CLI, install the `@electron-forge/cli` module into your project as a devDependency. If you're using the `create-electron-app` script, this module will already be installed for you.
@@ -26,6 +25,15 @@ npm install --save-dev @electron-forge/cli
 ## Bootstrap commands
 
 These commands help you get started with Forge. If you're just getting started with Electron Forge, we recommend you follow the [.](./ "mention") or [import-existing-project.md](import-existing-project.md "mention") guides.
+
+{% hint style="info" %}
+By default, Electron Forge will use `yarn` if it's available on your system when bootstrapping your application.\
+\
+To run Forge commands with a specific package manager, use the `NODE_INSTALLER` environment variable.
+
+<pre class="language-sh"><code class="lang-sh"><strong>NODE_INSTALLER=npm npx create-electron-app my-app-dir
+</strong></code></pre>
+{% endhint %}
 
 ### Init
 
@@ -201,4 +209,4 @@ const main = async () => {
 main();
 ```
 
-For more information, see the [API documentation](https://js.electronforge.io/classes/\_electron\_forge\_core.ForgeAPI.html).
+For more information, see the [API documentation](https://js.electronforge.io/classes/_electron_forge_core.ForgeAPI.html).
