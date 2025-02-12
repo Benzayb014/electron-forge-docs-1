@@ -1,6 +1,6 @@
 # GitHub
 
-The GitHub target publishes all your artifacts to GitHub releases, this allows your users to download the files straight from your repository. If your repository is open source you can use [update.electronjs.org](https://github.com/electron/update.electronjs.org) and get a free hosted update service.
+The GitHub Publisher uploads your artifacts to GitHub Releases, which allows your users to download the files straight from your repository. If your repository is open-source, you can use [update.electronjs.org](https://github.com/electron/update.electronjs.org) to get a free hosted update service (see [#auto-updating-from-github](github.md#auto-updating-from-github "mention") below).
 
 ## Installation
 
