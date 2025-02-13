@@ -6,9 +6,9 @@ description: >-
 
 # Makers
 
-Makers are Electron Forge's way of taking your packaged application and making platform specific distributables like DMG, EXE, or Flatpak files \(amongst others\).
+Makers are Electron Forge's way of taking your packaged application and generating platform-specific distributable formats like [dmg.md](dmg.md "mention"), [appx.md](appx.md "mention"), or [flatpak.md](flatpak.md "mention") files (amongst others).
 
-Each maker has to be configured in the `makers` section of your forge configuration with which platforms to run for and the maker specific config. E.g.
+Each maker has to be configured in the `makers` section of your Forge configuration. For example:
 
 {% tabs %}
 {% tab title="forge.config.js" %}
@@ -33,9 +33,9 @@ module.exports = {
 };
 ```
 {% endtab %}
+
 {% tab title="package.json" %}
-```jsonc
-// If your config is only in package.json:
+```json
 // Only showing the relevant configuration for brevity
 {
   "config": {
@@ -56,5 +56,7 @@ module.exports = {
 {% endtab %}
 {% endtabs %}
 
-Please note that all makers have logical defaults for the `platforms` value so you normally don't need to specify that property.
+{% hint style="info" %}
+If a Maker supports multiple platforms, you may specify which platforms you want to target. Note that all Makers have logical defaults for the `platforms` value so you normally don't need to specify that property.
+{% endhint %}
 
