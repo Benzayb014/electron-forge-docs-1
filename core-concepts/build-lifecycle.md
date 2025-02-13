@@ -15,14 +15,16 @@ Running each of these tasks will also run the previous ones in the sequence (i.e
 {% endhint %}
 
 ```mermaid fullWidth="false"
-graph TB
-    dev["fa:fa-code development Electron project"] -.-> package
-    publish -.-> cloud
-    subgraph forge["fa:fa-hammer Electron Forge"]
-        package["fa:fa-box Package"] -->|executable app bundle| make 
-        make["fa:fa-compact-disc Make"] -->|platform installers| publish["fa:fa-upload Publish"]
-    end
-    cloud["fa:fa-cloud Uploaded to cloud object storage"]
+graph LR
+ dev["fa:fa-code electron.app"] -.-> forge
+ forge -.-> cloud
+
+subgraph forge["fa:fa-hammer Electron Forge"]
+direction TB
+ package["fa:fa-box Package"] -->|executable app bundle| make
+ make["fa:fa-compact-disc Make"] -->|distributable installers| publish["fa:fa-upload Publish"]
+end
+ cloud["fa:fa-cloud Users"]
 ```
 
 ## Step 1: Package
