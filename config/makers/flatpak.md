@@ -4,11 +4,25 @@ description: Create a Flatpak app for your Electron app using Electron Forge.
 
 # Flatpak
 
-The Flatpak target builds [`.flatpak` files](http://flatpak.org/), which is a packaging format for Linux distributions that allows for sandboxed installation of applications in isolation from the rest of their system. In contrast, typical [deb.md](deb.md "mention") or [rpm.md](rpm.md "mention") installation methods are not sandboxed.
+[Flatpak](https://flatpak.org/) is a packaging format for Linux distributions that allows for sandboxed installation of applications in isolation from the rest of their system. In contrast, typical [deb.md](deb.md "mention") or [rpm.md](rpm.md "mention") installation methods are not sandboxed.
 
 ## Requirements
 
-You can only build the Flatpak target if you have [`flatpak`](https://docs.flatpak.org/en/latest/flatpak-command-reference.html#flatpak), [`flatpak-builder`](https://docs.flatpak.org/en/latest/flatpak-builder-command-reference.html#flatpak-builder), and `eu-strip` _(usually part of the_ [_`elfutils`_](https://sourceware.org/elfutils/) _package)_ installed on your system.
+You can only build the Flatpak target if you have the following installed on your system:
+
+* [`flatpak`](https://docs.flatpak.org/en/latest/flatpak-command-reference.html#flatpak)
+* [`flatpak-builder`](https://docs.flatpak.org/en/latest/flatpak-builder-command-reference.html#flatpak-builder)
+* `eu-strip` _(usually part of the_ [_`elfutils`_](https://sourceware.org/elfutils/) _package)_
+
+You will also need to add the Flathub remote repository to `flatpak` to access runtimes necessary to build your application:
+
+```sh
+flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+
+{% hint style="info" %}
+Flathub provides separate [installation instructions](https://flathub.org/setup) for each supported Linux distribution. Please refer to their documentation for additional information.
+{% endhint %}
 
 ## Installation
 
@@ -36,7 +50,7 @@ module.exports = {
 };
 ```
 
-Configuration options are documented in [`MakerFlatpakConfig`](https://js.electronforge.io/classes/\_electron\_forge\_maker\_flatpak.MakerFlatpak-1.html#config).
+Configuration options are documented in [`MakerFlatpakConfig`](https://js.electronforge.io/classes/_electron_forge_maker_flatpak.MakerFlatpak-1.html#config).
 
 ## Debugging
 
