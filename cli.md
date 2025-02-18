@@ -104,6 +104,15 @@ npm run package -- --arch="ia32"
 npx electron-forge package --arch="ia32"
 ```
 
+{% hint style="warning" %}
+#### **Packaging requires `node_modules` to be on disk**
+
+When packaging your Electron app, Forge crawls your project's `node_modules` folder to collect dependencies to bundle. Its module resolution algorithm is naive and doesn't take into account symlinked dependencies nor Yarn's Plug'n'Play (PnP) format.
+
+* If you are using Yarn >=2, please use the `nodeLinker: node-modules` install mode.
+* If you are using pnpm, please set `node-linker=hoisted` in your project's `.npmrc` configuration.
+{% endhint %}
+
 ### Make
 
 This command will make distributables for your application based on your Forge config and the parameters you pass in.

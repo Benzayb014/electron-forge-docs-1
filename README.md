@@ -4,17 +4,29 @@ description: Quickly scaffold an Electron project with a full build pipeline
 
 # Getting Started
 
-## Overview
-
 Electron Forge is an all-in-one tool for packaging and distributing Electron applications. It combines many single-purpose packages to create a full build pipeline that works out of the box, complete with code signing, installers, and artifact publishing. For advanced workflows, custom build logic can be added in the Forge lifecycle through its [Plugin API](config/plugins/). Custom build and storage targets can be handled by creating your own [Makers](config/makers/) and [Publishers](config/publishers/).
+
+## Prerequisites
+
+* [Node.js](https://nodejs.org/) ≥ v16.4.0
+* [Git](https://git-scm.com/)
+* A JavaScript package manager:
+  * [npm](https://www.npmjs.com/)
+  * [Yarn Classic](https://classic.yarnpkg.com/)
+  * [pnpm](https://pnpm.io/) (as of Forge v7.7.0)
+
+{% hint style="warning" %}
+#### **Packaging requires `node_modules` to be on disk**
+
+When packaging your Electron app, Forge crawls your project's `node_modules` folder to collect dependencies to bundle. Its module resolution algorithm is naive and doesn't take into account symlinked dependencies nor Yarn's Plug'n'Play (PnP) format.
+
+* If you are using Yarn >=2, please use the `nodeLinker: node-modules` install mode.
+* If you are using pnpm, please set `node-linker=hoisted` in your project's `.npmrc` configuration.
+{% endhint %}
 
 ## Creating a new app
 
 To get started with Electron Forge, we first need to initialize a new project with `create-electron-app`. This script is a convenient wrapper around Forge's [Init](cli.md#Init) command.
-
-{% hint style="warning" %}
-Electron Forge currently only supports npm and Yarn Classic. If you are using Yarn >=2, please use the `nodeLinker: node-modules` install mode.
-{% endhint %}
 
 ```bash
 npx create-electron-app@latest my-app
