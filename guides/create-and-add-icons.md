@@ -16,7 +16,7 @@ On platforms that have high-DPI support (such as Apple Retina displays), you can
 
 If you want to support different displays with different DPI densities at the same time, you can put images with different sizes in the same folder and use the filename without DPI suffixes. For example:
 
-```text
+```
 images/
 ├── icon.png
 ├── icon@2x.png
@@ -38,6 +38,10 @@ The recommended file formats and icon sizes for each platform are as follows:
 | macOS            | `.icns` | 512x512 pixels (1024x1024 for Retina displays) |
 | Windows          | `.ico`  | 256x256 pixels                                 |
 | Linux            | `.png`  | 512x512 pixels                                 |
+
+{% hint style="warning" %}
+On Windows, ensure that your `.ico` file is exported from an image editor that supports the format (such as [GIMP](https://www.gimp.org/)). Renaming a `.png` file into `.ico` will result in a `Fatal error: Unable to set icon` error.
+{% endhint %}
 
 ## Setting the app icon
 

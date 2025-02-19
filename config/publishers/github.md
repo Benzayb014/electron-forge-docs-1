@@ -1,6 +1,6 @@
 # GitHub
 
-The GitHub target publishes all your artifacts to GitHub releases, this allows your users to download the files straight from your repository. If your repository is open source you can use [update.electronjs.org](https://github.com/electron/update.electronjs.org) and get a free hosted update service.
+The GitHub Publisher uploads your artifacts to GitHub Releases, which allows your users to download the files straight from your repository. If your repository is open-source, you can use [update.electronjs.org](https://github.com/electron/update.electronjs.org) to get a free hosted update service (see [#auto-updating-from-github](github.md#auto-updating-from-github "mention") below).
 
 ## Installation
 
@@ -32,7 +32,22 @@ module.exports = {
 ```
 {% endcode %}
 
-Configuration options are documented in [`PublisherGitHubConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_github.PublisherGitHubConfig.html).
+Configuration options are documented in [`PublisherGitHubConfig`](https://js.electronforge.io/interfaces/_electron_forge_publisher_github.PublisherGitHubConfig.html).
+
+### Authentication
+
+We recommend using the `process.env.GITHUB_TOKEN` environment variable to authenticate the GitHub Publisher. This token requires write permissions to your repository's contents to create new releases.
+
+{% hint style="info" %}
+If you are publishing your app with GitHub Actions,  the `GITHUB_TOKEN` secret is pre-populated in every workflow. You will need to grant the necessary permissions via the `permissions` field at the top level of your workflow configuration.
+
+```yaml
+permissions:
+  contents: write
+```
+
+See the [Controlling permissions for GITHUB\_TOKEN](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token) documentation for more information.
+{% endhint %}
 
 ### Uploading to GitHub Enterprise instances
 

@@ -6,13 +6,13 @@
 
 ## Core Concepts
 
-* [Why Electron Forge](core-concepts/why-electron-forge.md)
+* [Why Electron Forge?](core-concepts/why-electron-forge.md)
 * [Build Lifecycle](core-concepts/build-lifecycle.md)
 
 ## Configuration <a href="#config" id="config"></a>
 
-* [Overview](config/configuration.md)
-* [TypeScript Configuration](config/typescript-configuration.md)
+* [Configuration Overview](config/configuration.md)
+* [TypeScript Setup](config/typescript-configuration.md)
 * [Plugins](config/plugins/README.md)
   * [Webpack Plugin](config/plugins/webpack.md)
   * [Vite Plugin](config/plugins/vite.md)
@@ -70,4 +70,4 @@
   * [Writing Templates](advanced/extending-electron-forge/writing-templates.md)
   * [Writing Makers](advanced/extending-electron-forge/writing-makers.md)
   * [Writing Publishers](advanced/extending-electron-forge/writing-publishers.md)
-* [API Docs](https://js.electronforge.io/modules/\_electron\_forge\_core.html)
+* [API Docs](https://js.electronforge.io/modules/_electron_forge_core.html)
